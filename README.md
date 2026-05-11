@@ -176,7 +176,7 @@ All API routes are pre-configured for testing.
 
 # 👨‍💻 Author
 
-## Shahin Alam
+## Md. Shahin Alam
 
 - 🎓 M.Sc. Engineering Student in CSE
 - 📱 Flutter Developer
@@ -197,4 +197,4 @@ If you like this project, give it a ⭐ on GitHub.
 
 ---
 
-© 2026 Shahin Alam. All Rights Reserved.
+© 2026 Md. Shahin Alam. All Rights Reserved.
