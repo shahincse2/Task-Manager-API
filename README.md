@@ -38,3 +38,12 @@
    ```bash
    git clone [https://github.com/shahincse2/Task-Manager-API.git](https://github.com/shahincse2/Task-Manager-API.git)
    cd Task-Manager-API
+
+---
+
+### ২. ডিপেন্ডেন্সি ইনস্টল করুন:
+```bash
+npm install
+
+---
+
