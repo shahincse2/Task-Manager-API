@@ -63,7 +63,7 @@ npm start
 
 ## 📮 এপিআই টেস্টিং (API Testing)
 
-এই রিপোজিটরিতে একটি ফাইল আছে যার নাম **`collection-for-task-manager.json`**।
+এই রিপোজিটরিতে একটি ফাইল আছে যার নাম **`Task Manager API.postman_collection.json`**।
 
 1. আপনার **Postman** অ্যাপটি ওপেন করুন।
 2. **Import** বাটনে ক্লিক করুন।
@@ -86,6 +86,6 @@ npm start
 
 আপনি যদি এই প্রজেক্টে কোনো পরিবর্তন বা উন্নতি করতে চান, তবে নির্দ্বিধায় **Pull Request** ওপেন করতে পারেন।
 
-**Developed by [Shahin Alam**](https://github.com/shahincse2) *M.Sc. Engineering in CSE Student & Researcher*
+**Developed by [Shahin Alam**](https://github.com/shahincse2) *M.Sc. Engineering in CSE Student, Flutter Developer & Researcher*
 
 ```
