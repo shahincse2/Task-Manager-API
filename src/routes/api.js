@@ -1,0 +1,84 @@
+const express = require('express');
+const router = express.Router();
+
+const UsersController = require('../controllers/UsersController');
+const TasksController = require('../controllers/TasksController');
+const AuthVerifyMiddleware = require('../middlewares/AuthVerifyMiddleware');
+
+// =============================================================================
+// ইউজার রুটস (User Management)
+// =============================================================================
+router.post("/Registration", UsersController.registration);
+router.post("/Login", UsersController.login);
+router.get("/ProfileDetails", AuthVerifyMiddleware, UsersController.profileDetails);
+router.patch("/ProfileUpdate", AuthVerifyMiddleware, UsersController.profileUpdate); // POST -> PATCH
+
+// পাসওয়ার্ড রিকভারি
+router.get("/RecoverVerifyEmail/:email", UsersController.RecoverVerifyEmail);
+router.get("/RecoverVerifyOtp/:email/:otp", UsersController.RecoverVerifyOtp);
+router.post("/RecoverResetPassword", UsersController.RecoverResetPassword);
+
+// =============================================================================
+// টাস্ক রুটস (Task Management - RESTful Standard)
+// =============================================================================
+
+// ১. টাস্ক তৈরি করা
+router.post("/createTask", AuthVerifyMiddleware, TasksController.createTask);
+
+// ২. টাস্ক ডিলিট করা (GET -> DELETE)
+router.delete("/deleteTask/:id", AuthVerifyMiddleware, TasksController.deleteTask);
+
+// ৩. টাস্ক স্ট্যাটাস আপডেট করা (GET -> PATCH)
+router.patch("/updateTaskStatus/:id/:status", AuthVerifyMiddleware, TasksController.updateTaskStatus);
+
+// ৪. স্ট্যাটাস অনুযায়ী টাস্ক দেখা
+router.get("/listTaskByStatus/:status", AuthVerifyMiddleware, TasksController.listTaskByStatus);
+
+// ৫. টাস্কের স্ট্যাটাস কাউন্ট করা
+router.get("/taskStatusCount", AuthVerifyMiddleware, TasksController.taskStatusCount);
+
+// ৬. পেজিনেশন সহ সব টাস্ক দেখা
+router.get("/listAllTasks/:pageNo", AuthVerifyMiddleware, TasksController.listAllTasks);
+
+// ৭. টাস্ক সার্চ করা
+router.get("/searchTask/:keyword", AuthVerifyMiddleware, TasksController.searchTask);
+
+module.exports = router;
+
+
+
+
+
+
+
+
+/*****
+const express = require('express');
+const UsersController = require('../controllers/UsersController');
+const TasksController = require('../controllers/TasksController');
+const AuthVerifyMiddleware = require('../middlewares/AuthVerifyMiddleware');
+
+const router = express.Router();
+
+// User Routes
+router.post("/Registration", UsersController.registration);
+router.post("/Login", UsersController.login);
+router.get("/ProfileDetails", AuthVerifyMiddleware, UsersController.profileDetails);
+router.post("/ProfileUpdate", AuthVerifyMiddleware, UsersController.profileUpdate);
+router.get("/RecoverVerifyEmail/:email", UsersController.RecoverVerifyEmail);
+router.get("/RecoverVerifyOtp/:email/:otp", UsersController.RecoverVerifyOtp);
+router.post("/RecoverResetPassword", UsersController.RecoverResetPassword);
+
+// Task Routes
+router.post("/createTask", AuthVerifyMiddleware, TasksController.createTask);
+router.get("/deleteTask/:id", AuthVerifyMiddleware, TasksController.deleteTask);
+router.get("/updateTaskStatus/:id/:status", AuthVerifyMiddleware, TasksController.updateTaskStatus);
+router.get("/listTaskByStatus/:status", AuthVerifyMiddleware, TasksController.listTaskByStatus);
+router.get("/taskStatusCount", AuthVerifyMiddleware, TasksController.taskStatusCount);
+
+// :pageNo যোগ করা হয়েছে
+router.get("/listAllTasks/:pageNo", AuthVerifyMiddleware, TasksController.listAllTasks);
+router.get("/searchTask/:keyword", AuthVerifyMiddleware, TasksController.searchTask);
+
+module.exports = router;
+****/
