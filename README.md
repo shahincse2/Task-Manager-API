@@ -1,132 +1,214 @@
-🚀 Professional Task Manager REST API
+# 🚀 Professional Task Manager REST API
 
-এটি একটি ইন্ডাস্ট্রি-স্ট্যান্ডার্ড ব্যাকএন্ড অ্যাপ্লিকেশন যা মূলত টাস্ক ম্যানেজমেন্টের জন্য তৈরি। এতে সিকিউরিটি, ডেটা ইন্টিগ্রিটি এবং স্কেলেবিলিটির ওপর সর্বোচ্চ গুরুত্ব দেওয়া হয়েছে। এটি আমার একাডেমিক রিসার্চ ও প্রফেশনাল ডেভেলপমেন্টের একটি সমন্বিত প্রতিফলন।
+A secure and scalable Task Management REST API built with Node.js, Express.js, and MongoDB.
 
-✨ মূল ফিচারসমূহ (Key Features)
+This project focuses on industry-standard backend architecture, authentication, security, and efficient data handling. It reflects both academic research and professional backend development practices.
 
-🔐 Secure Authentication: JWT ব্যবহার করে শক্তিশালী লগইন ও রেজিস্ট্রেশন সিস্টেম।
+---
 
-📧 OTP Verification: ইমেইল ভেরিফিকেশন এবং পাসওয়ার্ড রিকভারির জন্য রিয়েল-টাইম OTP সিস্টেম।
+## ✨ Features
 
-📊 Advanced Pagination: বড় ডেটাসেট হ্যান্ডেল করার জন্য মেমোরি-এফিশিয়েন্ট পেজিনেশন।
+### 🔐 Secure Authentication
+- JWT-based Authentication System
+- Secure Login & Registration
+- Password Hashing with Bcrypt
 
-🛡️ Multi-Layer Security: * Helmet (HTTP হেডার সিকিউরিটি)
+### 📧 OTP Verification System
+- Email Verification
+- Password Recovery using OTP
+- Real-time OTP Validation
 
-CORS (ক্রস-অরিজিন রিসোর্স শেয়ারিং)
+### 📊 Advanced Pagination
+- Efficient handling of large datasets
+- Memory-optimized paginated responses
 
-XSS-Clean (ক্রস-সাইট স্ক্রিপ্টিং প্রোটেকশন)
+### 🛡️ Multi-Layer Security
+- Helmet Security Headers
+- CORS Protection
+- XSS Protection
+- Rate Limiting against brute-force attacks
 
-Express-Rate-Limit (ব্রুট-ফোর্স অ্যাটাক প্রতিরোধ)
+### 📝 Task Management
+- Create Tasks
+- Update Tasks
+- Delete Tasks
+- Filter Tasks
+- Paginated Task Listing
 
-📝 Task CRUD: প্রফেশনাল টাস্ক ক্রিয়েশন, আপডেট, ফিল্টারিং এবং ডিলিট করার ক্ষমতা।
+---
 
-🛠️ টেকনোলজি স্ট্যাক (Tech Stack)
+# 🛠️ Tech Stack
 
-Runtime: Node.js
+| Technology | Purpose |
+|------------|----------|
+| Node.js | Runtime Environment |
+| Express.js | Backend Framework |
+| MongoDB | Database |
+| Mongoose | ODM |
+| JWT | Authentication |
+| Bcrypt | Password Hashing |
+| Nodemailer | Email Service |
+| Mailtrap | Email Testing |
 
-Framework: Express.js
+---
 
-Database: MongoDB with Mongoose ODM
+# 📂 Project Structure
 
-Security: Bcrypt (Hashing), JWT (Auth)
+```bash
+Task-Manager-API/
+│
+├── controllers/
+├── middleware/
+├── models/
+├── routes/
+├── utility/
+├── app.js
+├── package.json
+└── .env
+```
 
-Mail Service: Nodemailer (Tested with Mailtrap)
+---
 
-⚙️ কুইক সেটআপ (Setup Guide)
+# ⚙️ Installation & Setup
 
-১. রিপোজিটরি ক্লোন করুন:
+## 1️⃣ Clone The Repository
 
+```bash
 git clone https://github.com/shahincse2/Task-Manager-API.git
 cd Task-Manager-API
+```
 
+---
 
-২. ডিপেন্ডেন্সি ইনস্টল করুন:
+## 2️⃣ Install Dependencies
 
+```bash
 npm install
+```
 
+---
 
-৩. এনভায়রনমেন্ট সেটআপ (.env):
+## 3️⃣ Environment Variables Setup
 
-আপনার মেইন ডিরেক্টরিতে একটি .env ফাইল তৈরি করুন এবং নিচের ফরম্যাটে আপনার ডেটা দিন:
+Create a `.env` file in the root directory and add the following:
 
+```env
 PORT=5000
+
 DATABASE=your_mongodb_uri
+
 JWT_KEY=your_secret_key
+
 EMAIL_HOST=smtp.mailtrap.io
 EMAIL_PORT=2525
 EMAIL_USER=your_mailtrap_user_id
 EMAIL_PASS=your_mailtrap_password
+```
 
+---
 
-৪. সার্ভার রান করুন:
+## 4️⃣ Run The Server
 
+```bash
 npm start
+```
 
+Server running at:
 
-📮 এপিআই এন্ডপয়েন্টস (Major Endpoints)
+```bash
+http://localhost:5000
+```
 
-ক্যাটাগরি
+---
 
-মেথড
+# 📮 API Endpoints
 
-এন্ডপয়েন্ট
+## 🔑 Authentication
 
-বর্ণনা
+| Method | Endpoint | Description |
+|--------|-----------|-------------|
+| POST | `/api/v1/Registration` | Register New User |
+| POST | `/api/v1/Login` | Login & Generate JWT |
 
-Auth
+---
 
-POST
+## 📝 Tasks
 
-/api/v1/Registration
+| Method | Endpoint | Description |
+|--------|-----------|-------------|
+| POST | `/api/v1/createTask` | Create New Task |
+| GET | `/api/v1/listAllTasks/:pageNo` | Get All Tasks With Pagination |
+| POST | `/api/v1/updateTask/:id` | Update Task |
+| GET | `/api/v1/deleteTask/:id` | Delete Task |
 
-নতুন ইউজার রেজিস্ট্রেশন
+---
 
-Auth
+## 🔄 Password Recovery
 
-POST
+| Method | Endpoint | Description |
+|--------|-----------|-------------|
+| GET | `/api/v1/RecoverVerifyEmail/:email` | Send OTP |
+| GET | `/api/v1/RecoverVerifyOtp/:email/:otp` | Verify OTP |
 
-/api/v1/Login
+---
 
-লগইন ও টোকেন জেনারেট
+# 🧪 API Testing With Postman
 
-Tasks
+Import the following file into Postman:
 
-POST
+```bash
+Task Manager API.postman_collection.json
+```
 
-/api/v1/createTask
+All API routes are pre-configured for easy testing.
 
-নতুন টাস্ক তৈরি (Protected)
+---
 
-Tasks
+# 🔒 Security Features
 
-GET
+- JWT Authentication
+- Password Hashing
+- Rate Limiting
+- XSS Protection
+- Secure HTTP Headers
+- CORS Security
+- Environment Variable Protection
 
-/api/v1/listAllTasks/:pageNo
+---
 
-পেজিনেশন সহ সব টাস্ক দেখা
+# 📈 Future Improvements
 
-Recovery
+- Role-Based Access Control (RBAC)
+- Refresh Token Authentication
+- Docker Support
+- Unit & Integration Testing
+- Swagger Documentation
+- Redis Caching
+- CI/CD Pipeline
 
-GET
+---
 
-/api/v1/RecoverVerifyEmail/:email
+# 👨‍💻 Author
 
-ওটিপি সেন্ড করা
+## Shahin Alam
 
-Recovery
+- M.Sc. Engineering Student in CSE
+- Flutter Developer
+- Backend Developer
+- Research Enthusiast
 
-GET
+---
 
-/api/v1/RecoverVerifyOtp/:email/:otp
+# 📜 License
 
-ওটিপি ভেরিফিকেশন
+This project is licensed under the MIT License.
 
-🧪 টেস্টিং উইথ পোস্টম্যান (Postman)
+---
 
-সহজে টেস্ট করার জন্য এই রিপোজিটরিতে থাকা Task Manager API.postman_collection.json ফাইলটি পোস্টম্যানে ইমপোর্ট করে নিন। এতে সব এপিআই রাউট আগে থেকেই কনফিগার করা আছে।
+# ⭐ Support
 
-👨‍💻 আমার সম্পর্কে (About Me)
+If you like this project, don't forget to give it a ⭐ on GitHub.
 
-শাহীন আলম M.Sc. Engineering in CSE Student | Flutter Developer | Researcher
+---
 
-© 2026 Shahin Alam. Licensed under the MIT License.
+© 2026 Shahin Alam. All Rights Reserved.
