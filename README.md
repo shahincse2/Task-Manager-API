@@ -2,38 +2,19 @@
 
 A secure and scalable Task Management REST API built with Node.js, Express.js, and MongoDB.
 
-This project focuses on industry-standard backend architecture, authentication, security, and efficient data handling. It reflects both academic research and professional backend development practices.
+This project follows RESTful API principles with secure authentication, OTP verification, task management, pagination, and multi-layer security implementation.
 
 ---
 
 ## ✨ Features
 
-### 🔐 Secure Authentication
-- JWT-based Authentication System
-- Secure Login & Registration
-- Password Hashing with Bcrypt
-
-### 📧 OTP Verification System
-- Email Verification
-- Password Recovery using OTP
-- Real-time OTP Validation
-
-### 📊 Advanced Pagination
-- Efficient handling of large datasets
-- Memory-optimized paginated responses
-
-### 🛡️ Multi-Layer Security
-- Helmet Security Headers
-- CORS Protection
-- XSS Protection
-- Rate Limiting against brute-force attacks
-
-### 📝 Task Management
-- Create Tasks
-- Update Tasks
-- Delete Tasks
-- Filter Tasks
-- Paginated Task Listing
+- 🔐 JWT Authentication System
+- 📧 OTP Email Verification & Password Recovery
+- 🛡️ Multi-Layer Security
+- 📊 Pagination Support
+- 📝 Complete Task CRUD Operations
+- 🔎 Task Search Functionality
+- 📈 Task Status Analytics
 
 ---
 
@@ -52,13 +33,24 @@ This project focuses on industry-standard backend architecture, authentication, 
 
 ---
 
+# 🔒 Security Features
+
+- Helmet Security Headers
+- CORS Protection
+- XSS Protection
+- Express Rate Limiting
+- JWT Authentication
+- Password Hashing using Bcrypt
+
+---
+
 # 📂 Project Structure
 
 ```bash
 Task-Manager-API/
 │
 ├── controllers/
-├── middleware/
+├── middlewares/
 ├── models/
 ├── routes/
 ├── utility/
@@ -71,7 +63,7 @@ Task-Manager-API/
 
 # ⚙️ Installation & Setup
 
-## 1️⃣ Clone The Repository
+## 1️⃣ Clone Repository
 
 ```bash
 git clone https://github.com/shahincse2/Task-Manager-API.git
@@ -88,9 +80,9 @@ npm install
 
 ---
 
-## 3️⃣ Environment Variables Setup
+## 3️⃣ Setup Environment Variables
 
-Create a `.env` file in the root directory and add the following:
+Create a `.env` file in the root directory.
 
 ```env
 PORT=5000
@@ -113,7 +105,7 @@ EMAIL_PASS=your_mailtrap_password
 npm start
 ```
 
-Server running at:
+Server running on:
 
 ```bash
 http://localhost:5000
@@ -123,32 +115,38 @@ http://localhost:5000
 
 # 📮 API Endpoints
 
-## 🔑 Authentication
+## 🔑 Authentication & User Routes
 
 | Method | Endpoint | Description |
 |--------|-----------|-------------|
-| POST | `/api/v1/Registration` | Register New User |
-| POST | `/api/v1/Login` | Login & Generate JWT |
+| POST | `/register` | Register New User |
+| POST | `/login` | Login & Generate JWT |
+| GET | `/profile` | Get User Profile |
+| PATCH | `/profile` | Update User Profile |
 
 ---
 
-## 📝 Tasks
+## 🔄 Password Recovery Routes
 
 | Method | Endpoint | Description |
 |--------|-----------|-------------|
-| POST | `/api/v1/createTask` | Create New Task |
-| GET | `/api/v1/listAllTasks/:pageNo` | Get All Tasks With Pagination |
-| POST | `/api/v1/updateTask/:id` | Update Task |
-| GET | `/api/v1/deleteTask/:id` | Delete Task |
+| GET | `/recover-email/:email` | Send OTP To Email |
+| GET | `/recover-otp/:email/:otp` | Verify OTP |
+| POST | `/reset-password` | Reset Password |
 
 ---
 
-## 🔄 Password Recovery
+## 📝 Task Management Routes
 
 | Method | Endpoint | Description |
 |--------|-----------|-------------|
-| GET | `/api/v1/RecoverVerifyEmail/:email` | Send OTP |
-| GET | `/api/v1/RecoverVerifyOtp/:email/:otp` | Verify OTP |
+| POST | `/tasks` | Create New Task |
+| GET | `/tasks/:pageNo` | Get All Tasks With Pagination |
+| GET | `/tasks/status/:status` | Get Tasks By Status |
+| GET | `/tasks/search/:keyword` | Search Tasks |
+| GET | `/tasks-status-count` | Get Task Status Count |
+| PATCH | `/tasks/:id/:status` | Update Task Status |
+| DELETE | `/tasks/:id` | Delete Task |
 
 ---
 
@@ -160,19 +158,7 @@ Import the following file into Postman:
 Task Manager API.postman_collection.json
 ```
 
-All API routes are pre-configured for easy testing.
-
----
-
-# 🔒 Security Features
-
-- JWT Authentication
-- Password Hashing
-- Rate Limiting
-- XSS Protection
-- Secure HTTP Headers
-- CORS Security
-- Environment Variable Protection
+All API routes are pre-configured for testing.
 
 ---
 
@@ -181,9 +167,9 @@ All API routes are pre-configured for easy testing.
 - Role-Based Access Control (RBAC)
 - Refresh Token Authentication
 - Docker Support
-- Unit & Integration Testing
-- Swagger Documentation
+- Swagger API Documentation
 - Redis Caching
+- Unit & Integration Testing
 - CI/CD Pipeline
 
 ---
@@ -192,10 +178,10 @@ All API routes are pre-configured for easy testing.
 
 ## Shahin Alam
 
-- M.Sc. Engineering Student in CSE
-- Flutter Developer
-- Backend Developer
-- Research Enthusiast
+- 🎓 M.Sc. Engineering Student in CSE
+- 📱 Flutter Developer
+- 💻 Backend Developer
+- 🔬 Research Enthusiast
 
 ---
 
@@ -207,7 +193,7 @@ This project is licensed under the MIT License.
 
 # ⭐ Support
 
-If you like this project, don't forget to give it a ⭐ on GitHub.
+If you like this project, give it a ⭐ on GitHub.
 
 ---
 
