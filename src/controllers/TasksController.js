@@ -74,19 +74,13 @@ exports.taskStatusCount = async (req, res) => {
 exports.listAllTasks = async (req, res) => {
     try {
         let email = req.email;
-        
-        // কুয়েরি প্যারামিটার থেকে পেজ নম্বর নিন, না থাকলে ডিফল্ট ১
         let pageNo = Number(req.params.pageNo) || 1; 
-        let perPage = 10; // প্রতি পেজে কয়টি টাস্ক দেখাবে
+        let perPage = 10;
         let skipRow = (pageNo - 1) * perPage;
-
-        // ডাটাবেজ থেকে ডাটা নিয়ে আসা
         let data = await TasksModel.find({ email: email })
-                                   .sort({ createdDate: -1 }) // নতুন টাস্ক আগে দেখাবে
+                                   .sort({ createdDate: -1 })
                                    .skip(skipRow)
                                    .limit(perPage);
-
-        // মোট কতগুলো টাস্ক আছে তাও পাঠানো ভালো (যাতে ফ্রন্টএন্ডে পেজ সংখ্যা ক্যালকুলেট করা যায়)
         let total = await TasksModel.countDocuments({ email: email });
 
         res.status(200).json({ 
@@ -119,8 +113,6 @@ exports.searchTask = async (req, res) => {
     try {
         let email = req.email;
         let searchKeyword = req.params.keyword;
-        
-        // $or ব্যবহার করে title এবং description উভয় জায়গায় খোঁজা হচ্ছে
         let SearchQuery = {
             email: email,
             $or: [

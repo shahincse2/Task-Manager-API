@@ -161,7 +161,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:5000/api/v1/RecoverVerifyEmail/{{email}}",
+              "raw": "http://localhost:5000/api/v1/verifyEmail/{{email}}",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -170,7 +170,7 @@
               "path": [
                 "api",
                 "v1",
-                "RecoverVerifyEmail",
+                "verifyEmail",
                 "{{email}}"
               ]
             }
@@ -183,7 +183,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "http://localhost:5000/api/v1/RecoverVerifyOtp/{{email}}/959526",
+              "raw": "http://localhost:5000/api/v1/verifyOtp/{{email}}/959526",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -192,7 +192,7 @@
               "path": [
                 "api",
                 "v1",
-                "RecoverVerifyOtp",
+                "verifyOtp",
                 "{{email}}",
                 "959526"
               ]
@@ -215,7 +215,7 @@
               }
             },
             "url": {
-              "raw": "http://localhost:5000/api/v1/RecoverResetPassword",
+              "raw": "http://localhost:5000/api/v1/resetPassword",
               "protocol": "http",
               "host": [
                 "localhost"
@@ -224,7 +224,7 @@
               "path": [
                 "api",
                 "v1",
-                "RecoverResetPassword"
+                "resetPassword"
               ]
             }
           },
