@@ -74,9 +74,14 @@ cd Task-Manager-API
 
 ## 2️⃣ Install Dependencies
 
+```
+npm install express mongoose dotenv bcrypt jsonwebtoken nodemailer cors helmet express-rate-limit xss-clean && npm install --save-dev nodemon
+```
+
 ```bash
 npm install
 ```
+
 
 ---
 
