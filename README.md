@@ -77,6 +77,14 @@ cd Task-Manager-API
 ## 2️⃣ Install Dependencies
 #### প্রজেক্ট ডিরেক্টরিতে টার্মিনাল ওপেন করে নিচের কমান্ডটি রান করুন। এটি `package.json` ফাইল থেকে সব ডিপেন্ডেন্সি একসাথে ইনস্টল করে নেবে:
 
+```
+npm install express mongoose dotenv bcrypt jsonwebtoken nodemailer cors helmet express-rate-limit xss-clean
+```
+
+```
+npm install --save-dev nodemon
+```
+
 ```bash
 npm install
 ```
