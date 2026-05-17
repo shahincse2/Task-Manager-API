@@ -72,18 +72,19 @@ Task-Manager-API/
 
 যদি আপনি উইন্ডোজ ইউজার হন, তবে আলাদাভাবে ওয়েবসাইটে না গিয়ে আপনার **PowerShell (Run as Administrator)** ওপেন করে নিচের কমান্ডগুলো দিয়ে সফটওয়্যারগুলো সরাসরি ইনস্টল করে নিতে পারেন:
 
-```bash
 # Install Node.js (LTS)
+```bash
 winget install OpenJS.NodeJS.LTS
+```
 
-```bash
 # Install MongoDB Community Server
-winget install MongoDB.Server
-
 ```bash
+winget install MongoDB.Server
+```
 # Install MongoDB Compass (GUI)
+```bash
 winget install MongoDB.Compass
-
+```
 *> নোট: ইনস্টলেশন শেষ হলে টার্মিনালটি একবার রিস্টার্ট (বন্ধ করে আবার চালু) করে নিবেন যেন কমান্ডগুলো পিসিতে অ্যাক্টিভেট হয়।*
 ---
 
@@ -92,9 +93,14 @@ winget install MongoDB.Compass
 
 ```bash
 git clone [https://github.com/shahincse2/Task-Manager-API.git](https://github.com/shahincse2/Task-Manager-API.git)
+```
+```bash
 cd Task-Manager-API
-npm install
+```
 
+```bash
+npm install
+```
 
 ---
 
