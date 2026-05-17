@@ -43,7 +43,6 @@ This project follows RESTful API principles with secure authentication, OTP veri
 - Password Hashing using Bcrypt
 - MongoDB NoSQL Injection Protection (`express-mongo-sanitize`)
 - HTTP Parameter Pollution Protection (`hpp`)
-- 
 ---
 
 # 📂 Project Structure
