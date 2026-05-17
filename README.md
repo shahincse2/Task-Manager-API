@@ -92,7 +92,7 @@ winget install MongoDB.Compass
 টার্মিনালে নিচের কমান্ডগুলো দিয়ে প্রজেক্টটি ক্লোন করুন এবং প্রজেক্ট ফোল্ডারে গিয়ে `npm install` রান করুন। এটি `package.json` থেকে প্রয়োজনীয় সব নোড প্যাকেজ অটোমেটিক ইনস্টল করে নেবে:
 
 ```bash
-git clone [https://github.com/shahincse2/Task-Manager-API.git](https://github.com/shahincse2/Task-Manager-API.git)
+git clone https://github.com/shahincse2/Task-Manager-API.git
 ```
 ```bash
 cd Task-Manager-API
