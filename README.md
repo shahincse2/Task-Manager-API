@@ -70,6 +70,21 @@ Task-Manager-API/
 * **MongoDB Community Server** (ইনস্টল করার পর সার্ভিসটি চালু রাখুন)
 * **MongoDB Compass** (ডাটাবেজ দেখার জন্য)
 
+যদি আপনি উইন্ডোজ ইউজার হন, তবে আলাদাভাবে ওয়েবসাইটে না গিয়ে আপনার **PowerShell (Run as Administrator)** ওপেন করে নিচের কমান্ডগুলো দিয়ে সফটওয়্যারগুলো সরাসরি ইনস্টল করে নিতে পারেন:
+
+```bash
+# Install Node.js (LTS)
+winget install OpenJS.NodeJS.LTS
+
+```bash
+# Install MongoDB Community Server
+winget install MongoDB.Server
+
+```bash
+# Install MongoDB Compass (GUI)
+winget install MongoDB.Compass
+
+*> নোট: ইনস্টলেশন শেষ হলে টার্মিনালটি একবার রিস্টার্ট (বন্ধ করে আবার চালু) করে নিবেন যেন কমান্ডগুলো পিসিতে অ্যাক্টিভেট হয়।*
 ---
 
 ### 2️⃣ Clone Repository & Install Dependencies (অটোমেটিক ইনস্টলেশন)
