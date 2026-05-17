@@ -41,7 +41,9 @@ This project follows RESTful API principles with secure authentication, OTP veri
 - Express Rate Limiting
 - JWT Authentication
 - Password Hashing using Bcrypt
-
+- MongoDB NoSQL Injection Protection (`express-mongo-sanitize`)
+- HTTP Parameter Pollution Protection (`hpp`)
+- 
 ---
 
 # 📂 Project Structure
@@ -73,10 +75,12 @@ cd Task-Manager-API
 ---
 
 ## 2️⃣ Install Dependencies
+#### প্রজেক্ট ডিরেক্টরিতে টার্মিনাল ওপেন করে নিচের কমান্ডটি রান করুন। এটি `package.json` ফাইল থেকে সব ডিপেন্ডেন্সি একসাথে ইনস্টল করে নেবে:
 
 ```bash
 npm install
 ```
+
 
 ---
 
@@ -100,6 +104,7 @@ EMAIL_PASS=your_mailtrap_password
 ---
 
 ## 4️⃣ Run The Server
+#### Befor start: উইন্ডোজের services.msc থেকে MongoDB Server টি Start করা আছে কি না দেখে নিন।
 
 ```bash
 npm start
@@ -119,10 +124,10 @@ http://localhost:5000
 
 | Method | Endpoint | Description |
 |--------|-----------|-------------|
-| POST | `/register` | Register New User |
-| POST | `/login` | Login & Generate JWT |
-| GET | `/profile` | Get User Profile |
-| PATCH | `/profile` | Update User Profile |
+| POST | `/api/v1/registration` | Register New User |
+| POST | `/api/v1/login` | Login & Generate JWT |
+| GET | `/api/v1/profileDetails` | Get User Profile |
+| PATCH | `/api/v1/profileUpdate` | Update User Profile |
 
 ---
 
@@ -130,9 +135,9 @@ http://localhost:5000
 
 | Method | Endpoint | Description |
 |--------|-----------|-------------|
-| GET | `/recover-email/:email` | Send OTP To Email |
-| GET | `/recover-otp/:email/:otp` | Verify OTP |
-| POST | `/reset-password` | Reset Password |
+| GET | `/api/v1/verifyEmail/:email` | Send OTP To Email |
+| GET | `/api/v1/verifyOtp/:email/:otp` | Verify OTP |
+| POST | `/api/v1/resetPassword` | Reset Password |
 
 ---
 
@@ -140,13 +145,13 @@ http://localhost:5000
 
 | Method | Endpoint | Description |
 |--------|-----------|-------------|
-| POST | `/tasks` | Create New Task |
-| GET | `/tasks/:pageNo` | Get All Tasks With Pagination |
-| GET | `/tasks/status/:status` | Get Tasks By Status |
-| GET | `/tasks/search/:keyword` | Search Tasks |
-| GET | `/tasks-status-count` | Get Task Status Count |
-| PATCH | `/tasks/:id/:status` | Update Task Status |
-| DELETE | `/tasks/:id` | Delete Task |
+| POST | `/api/v1/createTask` | Create New Task |
+| GET | `/api/v1/listAllTasks/:pageNo` | Get All Tasks With Pagination |
+| GET | `/api/v1/listTaskByStatus/:status` | Get Tasks By Status |
+| GET | `/api/v1/searchTask/:keyword` | Search Tasks |
+| GET | `/api/v1/taskStatusCount` | Get Task Status Count |
+| PATCH | `/api/v1/updateTaskStatus/:id/:status` | Update Task Status |
+| DELETE | `/api/v1/deleteTask/:id` | Delete Task |
 
 ---
 
