@@ -65,12 +65,12 @@ Task-Manager-API/
 # ⚙️ Installation & Setup
 
 ### 1️⃣ Prerequisite (ম্যানুয়াল ইনস্টলেশন)
-প্রজেক্টটি রান করার আগে আপনার কম্পিউটারে অবশ্যই নিচের সফটওয়্যারগুলো ইনস্টল করা থাকতে হবে:
+> প্রজেক্টটি রান করার আগে আপনার কম্পিউটারে অবশ্যই নিচের সফটওয়্যারগুলো ইনস্টল করা থাকতে হবে:
 * **Node.js** (v18 বা তার ওপরের ভার্সন)
 * **MongoDB Community Server** (ইনস্টল করার পর সার্ভিসটি চালু রাখুন)
 * **MongoDB Compass** (ডাটাবেজ দেখার জন্য)
 
-যদি আপনি উইন্ডোজ ইউজার হন, তবে আলাদাভাবে ওয়েবসাইটে না গিয়ে আপনার **PowerShell (Run as Administrator)** ওপেন করে নিচের কমান্ডগুলো দিয়ে সফটওয়্যারগুলো সরাসরি ইনস্টল করে নিতে পারেন:
+> যদি আপনি উইন্ডোজ ইউজার হন, তবে আলাদাভাবে ওয়েবসাইটে না গিয়ে আপনার **PowerShell (Run as Administrator)** ওপেন করে নিচের কমান্ডগুলো দিয়ে সফটওয়্যারগুলো সরাসরি ইনস্টল করে নিতে পারেন:
 
 # Install Node.js (LTS)
 ```bash
@@ -89,7 +89,7 @@ winget install MongoDB.Compass
 ---
 
 ### 2️⃣ Clone Repository & Install Dependencies (অটোমেটিক ইনস্টলেশন)
-টার্মিনালে নিচের কমান্ডগুলো দিয়ে প্রজেক্টটি ক্লোন করুন এবং প্রজেক্ট ফোল্ডারে গিয়ে `npm install` রান করুন। এটি `package.json` থেকে প্রয়োজনীয় সব নোড প্যাকেজ অটোমেটিক ইনস্টল করে নেবে:
+> টার্মিনালে নিচের কমান্ডগুলো দিয়ে প্রজেক্টটি ক্লোন করুন এবং প্রজেক্ট ফোল্ডারে গিয়ে `npm install` রান করুন। এটি `package.json` থেকে প্রয়োজনীয় সব নোড প্যাকেজ অটোমেটিক ইনস্টল করে নেবে:
 
 ```bash
 git clone https://github.com/shahincse2/Task-Manager-API.git
@@ -124,7 +124,7 @@ EMAIL_PASS=your_mailtrap_password
 ---
 
 ## 4️⃣ Run The Server
-#### Befor start: উইন্ডোজের services.msc থেকে MongoDB Server টি Start করা আছে কি না দেখে নিন।
+> Befor start: উইন্ডোজের services.msc থেকে MongoDB Server টি Start করা আছে কি না দেখে নিন।
 
 ```bash
 npm start
